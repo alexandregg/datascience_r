@@ -34,9 +34,9 @@ dir("data")
 file.exists("data/murders.csv")
 ```
 
-# Importando dados com `readr` e `readxl`
+## Importando dados com `readr` e `readxl`
 
-## No Tidyverse:
+### Carregando o Tidyverse:
 ```{r}
 library(tidyverse)
 library(readr)
@@ -44,7 +44,7 @@ library(readxl)
 ```
 
 
-## CSV - Separado por virgulas
+### CSV - Separado por virgulas
 ```{r}
 read_lines("data/murders.csv", n_max = 3)
 ```
@@ -72,7 +72,7 @@ setequal(data1, data2, data3)
 
 ```
 
-## Excel
+### Excel
 ```{r}
 excel_sheets("data/Week_3_lab_data.xlsx")
 ```
@@ -80,4 +80,3 @@ excel_sheets("data/Week_3_lab_data.xlsx")
 read_excel("data/Week_3_lab_data.xlsx", sheet = "Sheet1")
 ```
 
-##
