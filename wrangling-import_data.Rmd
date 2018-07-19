@@ -2,7 +2,7 @@
 title: 'Data-Wrangling: Import Data'
 author: "Alexandre Galiani Garmbis"
 date: "18/07/2018"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
