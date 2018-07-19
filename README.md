@@ -1,6 +1,6 @@
 # Data Science com R
 
-Este repositório irá conter notas pessoais dos cursos da certificação profissional em Data Science da HarvardX na edX, ministrados pelo professor Rafael Irizarry.  
+Este repositório contém notas pessoais dos cursos da certificação profissional em Data Science da HarvardX na edX, ministrados pelo professor Rafael Irizarry.  
 
 Mais informações em: <https://www.edx.org/professional-certificate/harvardx-data-science>.  
 

@@ -1,0 +1,83 @@
+---
+title: 'Data-Wrangling: Import Data'
+author: "Alexandre Galiani Garmbis"
+date: "18/07/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Manipulando Caminhos e Arquivos no R
+
+```{r}
+(mypath <- getwd())
+```
+
+```{r}
+(filepath <- system.file("extdata", package = "dslabs"))
+```
+```{r}
+(files <- list.files(filepath))
+```
+```{r}
+(origin <- file.path(filepath, files[3]))
+```
+```{r}
+file.copy(origin, file.path(mypath, "data"))
+```
+```{r}
+dir("data")
+```
+```{r}
+file.exists("data/murders.csv")
+```
+
+# Importando dados com `readr` e `readxl`
+
+## No Tidyverse:
+```{r}
+library(tidyverse)
+library(readr)
+library(readxl)
+```
+
+
+## CSV - Separado por virgulas
+```{r}
+read_lines("data/murders.csv", n_max = 3)
+```
+
+```{r}
+read_csv("data/murders.csv") %>% print
+```
+```{r, message = FALSE}
+url <- "https://raw.githubusercontent.com/rafalab/dslabs/master/inst/extdata/murders.csv"
+data1 <- read_csv(url)
+
+# OR
+
+download.file(url, "data/murders2.csv")
+data2 <- read_csv("data/murders2.csv")
+
+# OR
+
+temp <- tempfile()
+download.file(url, temp)
+data3 <- read_csv(temp)
+file.remove(temp)
+
+setequal(data1, data2, data3)
+
+```
+
+## Excel
+```{r}
+excel_sheets("data/Week_3_lab_data.xlsx")
+```
+```{r}
+read_excel("data/Week_3_lab_data.xlsx", sheet = "Sheet1")
+```
+
+##
